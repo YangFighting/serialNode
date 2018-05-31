@@ -1,6 +1,6 @@
 # serialNode
 
-功能包serialnode中的 serial_node.cpp 节点功能如下
+功能包serialnode中的 serial_node.cpp 节点功能如下：
 1、接收手机蓝牙传来的数据
 2、将数据打印在屏幕上，并将数据以主题形式发布
 
