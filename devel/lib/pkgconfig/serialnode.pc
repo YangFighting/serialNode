@@ -1,0 +1,8 @@
+prefix=/home/yang/serial_catkin_ws/devel
+
+Name: serialnode
+Description: Description of serialnode
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/yang/serial_catkin_ws/devel/lib 
+Requires: 
