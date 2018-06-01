@@ -8,6 +8,7 @@ project(serialnode)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  message_generation
   roscpp
   std_msgs
   serial
@@ -47,11 +48,9 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(FILES
+  position.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -68,10 +67,9 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+generate_messages(DEPENDENCIES
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -103,6 +101,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
+  CATKIN_DEPENDS
+  message_runtime
 #  INCLUDE_DIRS include
 #  LIBRARIES serialnode
 #  CATKIN_DEPENDS std
@@ -205,5 +205,21 @@ add_executable(serial_node
 )
 add_dependencies(serial_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(serial_node
+  ${catkin_LIBRARIES}
+)
+
+add_executable(serial_positoin
+  src/serial_positoin.cpp
+)
+add_dependencies(serial_positoin ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(serial_positoin
+  ${catkin_LIBRARIES}
+)
+
+add_executable(Pos2bluetooth
+  src/Pos2bluetooth.cpp
+)
+add_dependencies(Pos2bluetooth ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(Pos2bluetooth
   ${catkin_LIBRARIES}
 )

@@ -66,28 +66,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -110,6 +88,17 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -120,6 +109,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -166,64 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+serialnode/CMakeFiles/Pos2bluetooth.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/Pos2bluetooth.dir/rule
+.PHONY : serialnode/CMakeFiles/Pos2bluetooth.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+Pos2bluetooth: serialnode/CMakeFiles/Pos2bluetooth.dir/rule
 
-.PHONY : std_msgs_generate_messages_py
+.PHONY : Pos2bluetooth
 
 # fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/build.make serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-serialnode/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : serialnode/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: serialnode/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/roscpp_generate_messages_py.dir/build.make serialnode/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+Pos2bluetooth/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/Pos2bluetooth.dir/build.make serialnode/CMakeFiles/Pos2bluetooth.dir/build
+.PHONY : Pos2bluetooth/fast
 
 # Convenience name for target.
 serialnode/CMakeFiles/serial_node.dir/rule:
@@ -241,6 +196,141 @@ serial_node/fast:
 .PHONY : serial_node/fast
 
 # Convenience name for target.
+serialnode/CMakeFiles/serialnode_generate_messages_py.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_generate_messages_py.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_generate_messages_py.dir/rule
+
+# Convenience name for target.
+serialnode_generate_messages_py: serialnode/CMakeFiles/serialnode_generate_messages_py.dir/rule
+
+.PHONY : serialnode_generate_messages_py
+
+# fast build rule for target.
+serialnode_generate_messages_py/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_generate_messages_py.dir/build.make serialnode/CMakeFiles/serialnode_generate_messages_py.dir/build
+.PHONY : serialnode_generate_messages_py/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serialnode_gennodejs.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_gennodejs.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_gennodejs.dir/rule
+
+# Convenience name for target.
+serialnode_gennodejs: serialnode/CMakeFiles/serialnode_gennodejs.dir/rule
+
+.PHONY : serialnode_gennodejs
+
+# fast build rule for target.
+serialnode_gennodejs/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_gennodejs.dir/build.make serialnode/CMakeFiles/serialnode_gennodejs.dir/build
+.PHONY : serialnode_gennodejs/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serialnode_generate_messages_nodejs.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_generate_messages_nodejs.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+serialnode_generate_messages_nodejs: serialnode/CMakeFiles/serialnode_generate_messages_nodejs.dir/rule
+
+.PHONY : serialnode_generate_messages_nodejs
+
+# fast build rule for target.
+serialnode_generate_messages_nodejs/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_generate_messages_nodejs.dir/build.make serialnode/CMakeFiles/serialnode_generate_messages_nodejs.dir/build
+.PHONY : serialnode_generate_messages_nodejs/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serialnode_genlisp.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_genlisp.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_genlisp.dir/rule
+
+# Convenience name for target.
+serialnode_genlisp: serialnode/CMakeFiles/serialnode_genlisp.dir/rule
+
+.PHONY : serialnode_genlisp
+
+# fast build rule for target.
+serialnode_genlisp/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_genlisp.dir/build.make serialnode/CMakeFiles/serialnode_genlisp.dir/build
+.PHONY : serialnode_genlisp/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make serialnode/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/build.make serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serial_positoin.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serial_positoin.dir/rule
+.PHONY : serialnode/CMakeFiles/serial_positoin.dir/rule
+
+# Convenience name for target.
+serial_positoin: serialnode/CMakeFiles/serial_positoin.dir/rule
+
+.PHONY : serial_positoin
+
+# fast build rule for target.
+serial_positoin/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serial_positoin.dir/build.make serialnode/CMakeFiles/serial_positoin.dir/build
+.PHONY : serial_positoin/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_nodejs: serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_nodejs/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make serialnode/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serialnode_generate_messages.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_generate_messages.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_generate_messages.dir/rule
+
+# Convenience name for target.
+serialnode_generate_messages: serialnode/CMakeFiles/serialnode_generate_messages.dir/rule
+
+.PHONY : serialnode_generate_messages
+
+# fast build rule for target.
+serialnode_generate_messages/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_generate_messages.dir/build.make serialnode/CMakeFiles/serialnode_generate_messages.dir/build
+.PHONY : serialnode_generate_messages/fast
+
+# Convenience name for target.
 serialnode/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
 	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : serialnode/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
@@ -254,6 +344,21 @@ roscpp_generate_messages_cpp: serialnode/CMakeFiles/roscpp_generate_messages_cpp
 roscpp_generate_messages_cpp/fast:
 	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make serialnode/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serialnode_generate_messages_lisp.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_generate_messages_lisp.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+serialnode_generate_messages_lisp: serialnode/CMakeFiles/serialnode_generate_messages_lisp.dir/rule
+
+.PHONY : serialnode_generate_messages_lisp
+
+# fast build rule for target.
+serialnode_generate_messages_lisp/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_generate_messages_lisp.dir/build.make serialnode/CMakeFiles/serialnode_generate_messages_lisp.dir/build
+.PHONY : serialnode_generate_messages_lisp/fast
 
 # Convenience name for target.
 serialnode/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
@@ -286,34 +391,34 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+serialnode/CMakeFiles/_catkin_empty_exported_target.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : serialnode/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_eus: serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+_catkin_empty_exported_target: serialnode/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
-.PHONY : roscpp_generate_messages_eus
+.PHONY : _catkin_empty_exported_target
 
 # fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/build.make serialnode/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+_catkin_empty_exported_target/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/_catkin_empty_exported_target.dir/build.make serialnode/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
 
 # Convenience name for target.
-serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+.PHONY : serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_py: serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+std_msgs_generate_messages_nodejs: serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_py
+.PHONY : std_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
+std_msgs_generate_messages_nodejs/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 serialnode/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
@@ -346,19 +451,64 @@ roscpp_generate_messages_nodejs/fast:
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
-serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+rosgraph_msgs_generate_messages_py: serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
-.PHONY : std_msgs_generate_messages_nodejs
+.PHONY : rosgraph_msgs_generate_messages_py
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make serialnode/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+rosgraph_msgs_generate_messages_py/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make serialnode/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+.PHONY : serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_py: serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+.PHONY : std_msgs_generate_messages_py
+
+# fast build rule for target.
+std_msgs_generate_messages_py/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/build.make serialnode/CMakeFiles/std_msgs_generate_messages_py.dir/build
+.PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serialnode_geneus.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_geneus.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_geneus.dir/rule
+
+# Convenience name for target.
+serialnode_geneus: serialnode/CMakeFiles/serialnode_geneus.dir/rule
+
+.PHONY : serialnode_geneus
+
+# fast build rule for target.
+serialnode_geneus/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_geneus.dir/build.make serialnode/CMakeFiles/serialnode_geneus.dir/build
+.PHONY : serialnode_geneus/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 serialnode/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
@@ -391,19 +541,121 @@ std_msgs_generate_messages_eus/fast:
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+serialnode/CMakeFiles/_serialnode_generate_messages_check_deps_position.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/_serialnode_generate_messages_check_deps_position.dir/rule
+.PHONY : serialnode/CMakeFiles/_serialnode_generate_messages_check_deps_position.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_lisp: serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+_serialnode_generate_messages_check_deps_position: serialnode/CMakeFiles/_serialnode_generate_messages_check_deps_position.dir/rule
 
-.PHONY : std_msgs_generate_messages_lisp
+.PHONY : _serialnode_generate_messages_check_deps_position
 
 # fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make serialnode/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
+_serialnode_generate_messages_check_deps_position/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/_serialnode_generate_messages_check_deps_position.dir/build.make serialnode/CMakeFiles/_serialnode_generate_messages_check_deps_position.dir/build
+.PHONY : _serialnode_generate_messages_check_deps_position/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : serialnode/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: serialnode/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/roscpp_generate_messages_py.dir/build.make serialnode/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serialnode_generate_messages_cpp.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_generate_messages_cpp.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+serialnode_generate_messages_cpp: serialnode/CMakeFiles/serialnode_generate_messages_cpp.dir/rule
+
+.PHONY : serialnode_generate_messages_cpp
+
+# fast build rule for target.
+serialnode_generate_messages_cpp/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_generate_messages_cpp.dir/build.make serialnode/CMakeFiles/serialnode_generate_messages_cpp.dir/build
+.PHONY : serialnode_generate_messages_cpp/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serialnode_gencpp.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_gencpp.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_gencpp.dir/rule
+
+# Convenience name for target.
+serialnode_gencpp: serialnode/CMakeFiles/serialnode_gencpp.dir/rule
+
+.PHONY : serialnode_gencpp
+
+# fast build rule for target.
+serialnode_gencpp/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_gencpp.dir/build.make serialnode/CMakeFiles/serialnode_gencpp.dir/build
+.PHONY : serialnode_gencpp/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serialnode_genpy.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_genpy.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_genpy.dir/rule
+
+# Convenience name for target.
+serialnode_genpy: serialnode/CMakeFiles/serialnode_genpy.dir/rule
+
+.PHONY : serialnode_genpy
+
+# fast build rule for target.
+serialnode_genpy/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_genpy.dir/build.make serialnode/CMakeFiles/serialnode_genpy.dir/build
+.PHONY : serialnode_genpy/fast
+
+# Convenience name for target.
+serialnode/CMakeFiles/serialnode_generate_messages_eus.dir/rule:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serialnode/CMakeFiles/serialnode_generate_messages_eus.dir/rule
+.PHONY : serialnode/CMakeFiles/serialnode_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+serialnode_generate_messages_eus: serialnode/CMakeFiles/serialnode_generate_messages_eus.dir/rule
+
+.PHONY : serialnode_generate_messages_eus
+
+# fast build rule for target.
+serialnode_generate_messages_eus/fast:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serialnode_generate_messages_eus.dir/build.make serialnode/CMakeFiles/serialnode_generate_messages_eus.dir/build
+.PHONY : serialnode_generate_messages_eus/fast
+
+src/Pos2bluetooth.o: src/Pos2bluetooth.cpp.o
+
+.PHONY : src/Pos2bluetooth.o
+
+# target to build an object file
+src/Pos2bluetooth.cpp.o:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/Pos2bluetooth.dir/build.make serialnode/CMakeFiles/Pos2bluetooth.dir/src/Pos2bluetooth.cpp.o
+.PHONY : src/Pos2bluetooth.cpp.o
+
+src/Pos2bluetooth.i: src/Pos2bluetooth.cpp.i
+
+.PHONY : src/Pos2bluetooth.i
+
+# target to preprocess a source file
+src/Pos2bluetooth.cpp.i:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/Pos2bluetooth.dir/build.make serialnode/CMakeFiles/Pos2bluetooth.dir/src/Pos2bluetooth.cpp.i
+.PHONY : src/Pos2bluetooth.cpp.i
+
+src/Pos2bluetooth.s: src/Pos2bluetooth.cpp.s
+
+.PHONY : src/Pos2bluetooth.s
+
+# target to generate assembly for a file
+src/Pos2bluetooth.cpp.s:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/Pos2bluetooth.dir/build.make serialnode/CMakeFiles/Pos2bluetooth.dir/src/Pos2bluetooth.cpp.s
+.PHONY : src/Pos2bluetooth.cpp.s
 
 src/serial_node.o: src/serial_node.cpp.o
 
@@ -432,6 +684,33 @@ src/serial_node.cpp.s:
 	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serial_node.dir/build.make serialnode/CMakeFiles/serial_node.dir/src/serial_node.cpp.s
 .PHONY : src/serial_node.cpp.s
 
+src/serial_positoin.o: src/serial_positoin.cpp.o
+
+.PHONY : src/serial_positoin.o
+
+# target to build an object file
+src/serial_positoin.cpp.o:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serial_positoin.dir/build.make serialnode/CMakeFiles/serial_positoin.dir/src/serial_positoin.cpp.o
+.PHONY : src/serial_positoin.cpp.o
+
+src/serial_positoin.i: src/serial_positoin.cpp.i
+
+.PHONY : src/serial_positoin.i
+
+# target to preprocess a source file
+src/serial_positoin.cpp.i:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serial_positoin.dir/build.make serialnode/CMakeFiles/serial_positoin.dir/src/serial_positoin.cpp.i
+.PHONY : src/serial_positoin.cpp.i
+
+src/serial_positoin.s: src/serial_positoin.cpp.s
+
+.PHONY : src/serial_positoin.s
+
+# target to generate assembly for a file
+src/serial_positoin.cpp.s:
+	cd /home/yang/serial_catkin_ws/build && $(MAKE) -f serialnode/CMakeFiles/serial_positoin.dir/build.make serialnode/CMakeFiles/serial_positoin.dir/src/serial_positoin.cpp.s
+.PHONY : src/serial_positoin.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -439,31 +718,52 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... list_install_components"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... test"
+	@echo "... install/strip"
 	@echo "... edit_cache"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... Pos2bluetooth"
 	@echo "... serial_node"
-	@echo "... rebuild_cache"
+	@echo "... serialnode_generate_messages_py"
+	@echo "... serialnode_gennodejs"
+	@echo "... serialnode_generate_messages_nodejs"
+	@echo "... serialnode_genlisp"
+	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... roscpp_generate_messages_eus"
+	@echo "... serial_positoin"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... serialnode_generate_messages"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... serialnode_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... install/local"
+	@echo "... _catkin_empty_exported_target"
+	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... test"
-	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... std_msgs_generate_messages_py"
+	@echo "... rebuild_cache"
+	@echo "... serialnode_geneus"
+	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... install/strip"
-	@echo "... install/local"
+	@echo "... _serialnode_generate_messages_check_deps_position"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... serialnode_generate_messages_cpp"
+	@echo "... serialnode_gencpp"
 	@echo "... install"
+	@echo "... serialnode_genpy"
+	@echo "... serialnode_generate_messages_eus"
+	@echo "... src/Pos2bluetooth.o"
+	@echo "... src/Pos2bluetooth.i"
+	@echo "... src/Pos2bluetooth.s"
 	@echo "... src/serial_node.o"
 	@echo "... src/serial_node.i"
 	@echo "... src/serial_node.s"
+	@echo "... src/serial_positoin.o"
+	@echo "... src/serial_positoin.i"
+	@echo "... src/serial_positoin.s"
 .PHONY : help
 
 

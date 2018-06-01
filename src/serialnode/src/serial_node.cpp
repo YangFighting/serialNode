@@ -2,7 +2,8 @@
 #include <serial/serial.h>  //ROS已经内置了的串口包 
 #include <std_msgs/String.h> 
 #include <std_msgs/Empty.h> 
-  
+#include "serialnode/position.h"
+
 serial::Serial ser; //声明串口对象 
   
 //回调函数 

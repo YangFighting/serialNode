@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/yang/serial_catkin_ws/devel/include/serialnode/position.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/yang/serial_catkin_ws/src/serialnode/src/serial_node.cpp
 ros/ros.h
 -
@@ -15,6 +31,8 @@ std_msgs/String.h
 -
 std_msgs/Empty.h
 -
+serialnode/position.h
+/home/yang/serial_catkin_ws/src/serialnode/src/serialnode/position.h
 
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h

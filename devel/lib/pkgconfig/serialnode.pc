@@ -3,6 +3,6 @@ prefix=/home/yang/serial_catkin_ws/devel
 Name: serialnode
 Description: Description of serialnode
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/yang/serial_catkin_ws/devel/include
 Libs: -L/home/yang/serial_catkin_ws/devel/lib 
-Requires: 
+Requires: message_runtime
