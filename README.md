@@ -28,6 +28,7 @@ sudo rfcomm bind 0 【MAC】 【信道】
 
 
 --------------------2018.06.01--------------
+
 在src/serialnode/ 中增加
 serial_positoin.cpp（产生位置坐标，通过自定义消息发布出去 ）
 Pos2bluetooth.cpp（订阅自定义消息，通过蓝牙将 位置坐标 发送到手机）
